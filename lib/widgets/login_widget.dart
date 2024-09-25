@@ -37,7 +37,13 @@ class _LoginScreenState extends State<LoginScreen> {
       }
 
       // API call with error handling
-      String? loginError = await _apiServices.login(username, password);
+      String? loginError;
+      try {
+        loginError = await _apiServices.login(username, password);
+      } catch (e) {
+        // Catch any exceptions that might occur during the API call
+        loginError = 'Login failed: $e';
+      }
 
       // Handle login error
       if (loginError != null) {
@@ -67,8 +73,6 @@ class _LoginScreenState extends State<LoginScreen> {
           _showErrorFlushbar('Some values are null or empty.');
         }
       }
-    } catch (e) {
-      _showErrorFlushbar('Login failed: $e');
     } finally {
       // Enable the button again after the login attempt
       setState(() {
