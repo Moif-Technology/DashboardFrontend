@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class ApiServices {
   // final String _baseUrl = 'http://10.39.1.64:5000';
-  final String _baseUrl = 'https://dashboard-backend-ten.vercel.app/';
+  final String _baseUrl = 'https://dashboard-backend-eight-omega.vercel.app/';
   final FlutterSecureStorage _storage = FlutterSecureStorage();
   String? _token;
   int? lastResponseStatusCode;
