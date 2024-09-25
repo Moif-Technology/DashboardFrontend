@@ -24,31 +24,17 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     try {
-      final String username = _usernameController.text.trim();
-      final String password = _passwordController.text.trim();
-
-      // Check if fields are empty
-      if (username.isEmpty || password.isEmpty) {
-        _showErrorFlushbar('Username and password cannot be empty.');
-        setState(() {
-          _isLoading = false;
-        });
-        return;
-      }
-
-      // API call with error handling
-      String? loginError;
-      try {
-        loginError = await _apiServices.login(username, password);
-      } catch (e) {
-        // Catch any exceptions that might occur during the API call
-        loginError = 'Login failed: $e';
-      }
+      String? loginError = await _apiServices.login(
+        _usernameController.text.trim(),
+        _passwordController.text.trim(),
+      );
 
       // Handle login error
       if (loginError != null) {
         _showErrorFlushbar(loginError);
       } else {
+        await Future.delayed(Duration(milliseconds: 500));
+
         // Fetch token and company details from secure storage
         final String? token = await _storage.read(key: 'token');
         final String? companyId = await _storage.read(key: 'companyId');
@@ -73,6 +59,8 @@ class _LoginScreenState extends State<LoginScreen> {
           _showErrorFlushbar('Some values are null or empty.');
         }
       }
+    } catch (e) {
+      _showErrorFlushbar('Login failed: $e');
     } finally {
       // Enable the button again after the login attempt
       setState(() {
@@ -81,7 +69,6 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  // Show error using Flushbar
   void _showErrorFlushbar(String message) {
     Flushbar(
       message: message,
