@@ -162,6 +162,7 @@ void _showCountersDialog() {
               width: 250,
               child: SideMenuWidget(
                 selectedBranchId: _selectedBranchId, // Pass branchId to SideMenu
+                 selectedDate: _selectedDate, // Pass selectedDate to SideMenu
               ),
             )
           : null,

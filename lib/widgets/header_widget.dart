@@ -1,7 +1,6 @@
+import 'package:fitness_dashboard_ui/util/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:fitness_dashboard_ui/widgets/side_menu_widget.dart';
-import 'package:fitness_dashboard_ui/util/responsive.dart';
 
 class HeaderWidget extends StatefulWidget {
   final Function(DateTime) onDateSelected;
@@ -44,7 +43,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           ),
 
         // SideMenu is integrated and visible directly for larger screens
-        if (Responsive.isDesktop(context)) const SideMenuWidget(),
+        // if (Responsive.isDesktop(context)) const SideMenuWidget(),
 
         // Date picker and selected date display
         Expanded(
@@ -72,7 +71,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                 child: CircleAvatar(
                   backgroundColor: Colors.transparent,
                   child: Image.asset(
-                    "assets/images/avatar.png",
+                    "assets/images/chart.png",
                     width: 32,
                   ),
                 ),

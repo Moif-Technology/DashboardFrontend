@@ -4,12 +4,18 @@ import 'package:fitness_dashboard_ui/services/api_services.dart';
 import 'package:fitness_dashboard_ui/widgets/group_report.dart';
 import 'package:fitness_dashboard_ui/widgets/login_widget.dart';
 import 'package:fitness_dashboard_ui/widgets/reports_details.dart';
+import 'package:fitness_dashboard_ui/widgets/summary_widget.dart';
 import 'package:flutter/material.dart';
 
 class SideMenuWidget extends StatefulWidget {
-   final String? selectedBranchId; // Accept branchId from MainScreen
+  final String? selectedBranchId; // Accept branchId from MainScreen
+  final DateTime selectedDate; // Add selectedDate parameter
 
-  const SideMenuWidget({super.key, this.selectedBranchId});
+  const SideMenuWidget({
+    super.key,
+    this.selectedBranchId,
+    required this.selectedDate,
+  });
 
   @override
   State<SideMenuWidget> createState() => _SideMenuWidgetState();
@@ -68,23 +74,45 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
           // Handle Reports navigation
           else if (data.menu[index].title == 'Items Reports') {
             Navigator.push(
-             context,
+              context,
               MaterialPageRoute(
                 builder: (context) => ReportTable(
-                  branchId: widget.selectedBranchId, 
+                  branchId: widget.selectedBranchId,
                 ),
               ),
             );
           }
           // Handle other menu options (if any)
-           else if (data.menu[index].title == 'Group Reports') {
+          else if (data.menu[index].title == 'Group Reports') {
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => GroupReportTable(
-                  branchId: widget.selectedBranchId, // Pass branchId to GroupReportTable
+                  branchId: widget
+                      .selectedBranchId, // Pass branchId to GroupReportTable
                 ),
               ),
+            );
+          } else if (data.menu[index].title == 'Area Sales') {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return Dialog(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width *
+                        0.8, // Customize size
+                    height: MediaQuery.of(context).size.height *
+                        0.8, // Customize size
+                    child: SummaryWidget(
+                      branchId: widget.selectedBranchId,
+                      selectedDate: widget.selectedDate,
+                    ),
+                  ),
+                );
+              },
             );
           }
         },

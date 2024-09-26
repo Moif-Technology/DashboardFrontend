@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:fitness_dashboard_ui/services/api_services.dart';
+import 'package:flutter/material.dart';
 
 class CountersDialog extends StatefulWidget {
   final String? branchId; // Add branchId parameter
@@ -138,14 +138,29 @@ class _CountersDialogState extends State<CountersDialog> {
             counter['CashToBeCollected']?.toString() ?? '0',
             'Collected Cash',
             counter['CollectedCash']?.toString() ?? '0'),
-        _buildInfoRow('Cash Difference',
-            counter['CashDifference']?.toString() ?? '0', ''),
+        _buildInfoRow(
+          'Cash Difference',
+          counter['CashDifference']?.toString() ?? '0',
+          'Total Bill',
+          counter['BillCount']?.toString() ?? '0',
+        ),
       ],
     );
   }
 
   // Sales and Tax Information Section
+// Sales and Tax Information Section
   Widget _buildSalesSection(Map<String, dynamic> counter) {
+    // Calculate the total sales by adding TotalCash, TotalCredit, and TotalCreditCard
+    double totalCash =
+        double.tryParse(counter['TotalCash']?.toString() ?? '0') ?? 0;
+    double totalCredit =
+        double.tryParse(counter['TotalCredit']?.toString() ?? '0') ?? 0;
+    double totalCreditCard =
+        double.tryParse(counter['TotalCreditCard']?.toString() ?? '0') ?? 0;
+
+    double totalSales = totalCash + totalCredit + totalCreditCard;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -154,7 +169,7 @@ class _CountersDialogState extends State<CountersDialog> {
         _buildInfoRow(
             'Voucher Amount', counter['VoucherAmount']?.toString() ?? '0', ''),
         const Divider(),
-        _buildInfoRow('Total Sales', counter['BillCount']?.toString() ?? '0',
+        _buildInfoRow('Total Sales', totalSales.toStringAsFixed(2),
             'Total TAX Amount', counter['ComplimentAmount']?.toString() ?? '0'),
       ],
     );
