@@ -20,9 +20,9 @@ io.flutter.plugins.pathprovider.path_provider_android-jetified-window-java-1.2.0
 io.flutter.plugins.pathprovider.path_provider_android-lifecycle-livedata-2.7.0-19 C:\Users\LAPTOP SHOP\.gradle\caches\transforms-3\fd0b5b1c67526447abb120b03323d8cf\transformed\lifecycle-livedata-2.7.0\res
 io.flutter.plugins.pathprovider.path_provider_android-main-20 C:\Users\LAPTOP SHOP\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.9\android\src\main\res
 io.flutter.plugins.pathprovider.path_provider_android-release-21 C:\Users\LAPTOP SHOP\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.9\android\src\release\res
-io.flutter.plugins.pathprovider.path_provider_android-pngs-22 D:\Dashboard\frontend\build\path_provider_android\generated\res\pngs\release
-io.flutter.plugins.pathprovider.path_provider_android-resValues-23 D:\Dashboard\frontend\build\path_provider_android\generated\res\resValues\release
-io.flutter.plugins.pathprovider.path_provider_android-rs-24 D:\Dashboard\frontend\build\path_provider_android\generated\res\rs\release
-io.flutter.plugins.pathprovider.path_provider_android-mergeReleaseResources-25 D:\Dashboard\frontend\build\path_provider_android\intermediates\incremental\release\mergeReleaseResources\merged.dir
-io.flutter.plugins.pathprovider.path_provider_android-mergeReleaseResources-26 D:\Dashboard\frontend\build\path_provider_android\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-io.flutter.plugins.pathprovider.path_provider_android-merged_res-27 D:\Dashboard\frontend\build\path_provider_android\intermediates\merged_res\release
+io.flutter.plugins.pathprovider.path_provider_android-pngs-22 D:\front\build\path_provider_android\generated\res\pngs\release
+io.flutter.plugins.pathprovider.path_provider_android-resValues-23 D:\front\build\path_provider_android\generated\res\resValues\release
+io.flutter.plugins.pathprovider.path_provider_android-rs-24 D:\front\build\path_provider_android\generated\res\rs\release
+io.flutter.plugins.pathprovider.path_provider_android-mergeReleaseResources-25 D:\front\build\path_provider_android\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.flutter.plugins.pathprovider.path_provider_android-mergeReleaseResources-26 D:\front\build\path_provider_android\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.flutter.plugins.pathprovider.path_provider_android-merged_res-27 D:\front\build\path_provider_android\intermediates\merged_res\release

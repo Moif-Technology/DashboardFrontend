@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:fitness_dashboard_ui/data/details.dart';
+import 'package:fitness_dashboard_ui/model/detail_model.dart';
 import 'package:fitness_dashboard_ui/util/responsive.dart';
 import 'package:fitness_dashboard_ui/widgets/custom_card_widget.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:fitness_dashboard_ui/model/detail_model.dart';
 
 class ActivityDetailsCard extends StatefulWidget {
   final DateTime selectedDate;
@@ -59,29 +59,53 @@ class _ActivityDetailsCardState extends State<ActivityDetailsCard> {
         } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
           return const Center(child: Text('No data available'));
         } else {
+          // Separate the Sales Amount (isSpecialCard) data to show it first
+          List<DetailModel> specialCards = snapshot.data!
+              .where((data) => data.title == "Sales" || data.title == "Cash")
+              .toList();
+          List<DetailModel> otherCards = snapshot.data!
+              .where((data) => data.title != "Sales" && data.title != "Cash")
+              .toList();
+
           return StaggeredGridView.countBuilder(
             crossAxisCount: Responsive.isMobile(context) ? 2 : 4,
-            itemCount: snapshot.data!.length,
+            itemCount: specialCards.length + otherCards.length,
             shrinkWrap: true,
             physics: const ScrollPhysics(),
             crossAxisSpacing: Responsive.isMobile(context) ? 12 : 15,
             mainAxisSpacing: 12.0,
             itemBuilder: (context, index) {
-              final data = snapshot.data![index];
-              bool isSpecialCard =
-                  data.title == "Sales" || data.title == "Cash";
+              // Show the Sales Amount section first
+              if (index < specialCards.length) {
+                final data = specialCards[index];
+                return CustomCard(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      // Display the icon and totalAmount near each other
 
-              return CustomCard(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      data.icon,
-                      width: 50,
-                      height: 50,
-                    ),
-                    if (isSpecialCard) ...[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            data.icon,
+                            width: 50,
+                            height: 50,
+                          ),
+                          const SizedBox(
+                              width: 10), // Space between icon and amount
+                          if (data.totalAmount != null)
+                            Text(
+                              "${data.totalAmount}",
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                        ],
+                      ),
                       Padding(
                         padding: const EdgeInsets.only(top: 10, bottom: 4),
                         child: Text(
@@ -93,6 +117,7 @@ class _ActivityDetailsCardState extends State<ActivityDetailsCard> {
                           ),
                         ),
                       ),
+                      // Show the four payment methods: Cash, Credit, Credit Card, Online
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -113,9 +138,32 @@ class _ActivityDetailsCardState extends State<ActivityDetailsCard> {
                               data.title3!,
                               Colors.white,
                             ),
+                          if (data.value4 != null)
+                            buildDetailColumn(
+                              data.value4!,
+                              data.title4!,
+                              Colors.white,
+                            ),
                         ],
                       ),
-                    ] else ...[
+                    ],
+                  ),
+                );
+              }
+
+              // Show the other cards after the Sales Amount section
+              else {
+                final data = otherCards[index - specialCards.length];
+                return CustomCard(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        data.icon,
+                        width: 50,
+                        height: 50,
+                      ),
                       Padding(
                         padding: const EdgeInsets.only(top: 15, bottom: 4),
                         child: Text(
@@ -136,12 +184,14 @@ class _ActivityDetailsCardState extends State<ActivityDetailsCard> {
                         ),
                       ),
                     ],
-                  ],
-                ),
-              );
+                  ),
+                );
+              }
             },
             staggeredTileBuilder: (index) {
-              final data = snapshot.data![index];
+              final data = index < specialCards.length
+                  ? specialCards[index]
+                  : otherCards[index - specialCards.length];
 
               bool isSpecialCard =
                   data.title == "Sales" || data.title == "Cash";

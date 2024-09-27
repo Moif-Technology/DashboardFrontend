@@ -6,7 +6,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
 class ApiServices {
-  // final String _baseUrl = 'http://10.39.1.80:5000';
+  // final String _baseUrl = 'http://10.39.1.132:5000';
   final String _baseUrl = 'https://dashboard-backend-eight-omega.vercel.app';
 
   final FlutterSecureStorage _storage = FlutterSecureStorage();
@@ -174,7 +174,12 @@ class ApiServices {
         : '/salesDetails?date=$date';
 
     final response = await get(endpoint);
-    return await _handleApiResponse(response);
+    final data = await _handleApiResponse(response);
+
+    // Print the response data
+    print('Sales Details API Response: $data');
+
+    return data;
   }
 
   Future<int> fetchCustomerCount(String date, {String? branchId}) async {

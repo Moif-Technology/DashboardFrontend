@@ -1,4 +1,4 @@
-#Thu Sep 26 08:44:04 GST 2024
+#Fri Sep 27 17:39:03 GST 2024
 base.0=D\:\\front\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=D\:\\front\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
 base.2=D\:\\front\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

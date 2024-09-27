@@ -6,13 +6,13 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml
+8-->D:\front\android\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="34" />
-9-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml
+9-->D:\front\android\app\src\main\AndroidManifest.xml
 10    <!-- Add the INTERNET permission here -->
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:3:5-67
-11-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:3:22-64
+11-->D:\front\android\app\src\main\AndroidManifest.xml:3:5-67
+11-->D:\front\android\app\src\main\AndroidManifest.xml:3:22-64
 12
 13    <permission
 13-->[androidx.core:core:1.13.1] C:\Users\LAPTOP SHOP\.gradle\caches\transforms-3\322535cccf9df41e8ca9065b98e7a858\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
@@ -27,54 +27,54 @@
 18
 19    <application
 20        android:name="android.app.Application"
-20-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:7:9-42
+20-->D:\front\android\app\src\main\AndroidManifest.xml:7:9-42
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 21-->[androidx.core:core:1.13.1] C:\Users\LAPTOP SHOP\.gradle\caches\transforms-3\322535cccf9df41e8ca9065b98e7a858\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 22        android:icon="@mipmap/ic_launcher"
-22-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:8:9-43
+22-->D:\front\android\app\src\main\AndroidManifest.xml:8:9-43
 23        android:label="Dashboard Invent POS" >
-23-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:6:9-45
+23-->D:\front\android\app\src\main\AndroidManifest.xml:6:9-45
 24        <activity
-24-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:9:9-26:20
+24-->D:\front\android\app\src\main\AndroidManifest.xml:9:9-26:20
 25            android:name="com.example.fitness_dashboard_ui.MainActivity"
-25-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:11:13-41
+25-->D:\front\android\app\src\main\AndroidManifest.xml:11:13-41
 26            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-26-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:15:13-163
+26-->D:\front\android\app\src\main\AndroidManifest.xml:15:13-163
 27            android:exported="true"
-27-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:12:13-36
+27-->D:\front\android\app\src\main\AndroidManifest.xml:12:13-36
 28            android:hardwareAccelerated="true"
-28-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:16:13-47
+28-->D:\front\android\app\src\main\AndroidManifest.xml:16:13-47
 29            android:launchMode="singleTop"
-29-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:13:13-43
+29-->D:\front\android\app\src\main\AndroidManifest.xml:13:13-43
 30            android:theme="@style/LaunchTheme"
-30-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:14:13-47
+30-->D:\front\android\app\src\main\AndroidManifest.xml:14:13-47
 31            android:windowSoftInputMode="adjustResize" >
-31-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:17:13-55
+31-->D:\front\android\app\src\main\AndroidManifest.xml:17:13-55
 32            <meta-data
-32-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:18:13-21:19
+32-->D:\front\android\app\src\main\AndroidManifest.xml:18:13-21:19
 33                android:name="io.flutter.embedding.android.NormalTheme"
-33-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:19:17-72
+33-->D:\front\android\app\src\main\AndroidManifest.xml:19:17-72
 34                android:resource="@style/NormalTheme" />
-34-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:20:17-54
+34-->D:\front\android\app\src\main\AndroidManifest.xml:20:17-54
 35
 36            <intent-filter>
-36-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:22:13-25:29
+36-->D:\front\android\app\src\main\AndroidManifest.xml:22:13-25:29
 37                <action android:name="android.intent.action.MAIN" />
-37-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:23:17-68
-37-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:23:25-66
+37-->D:\front\android\app\src\main\AndroidManifest.xml:23:17-68
+37-->D:\front\android\app\src\main\AndroidManifest.xml:23:25-66
 38
 39                <category android:name="android.intent.category.LAUNCHER" />
-39-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:24:17-76
-39-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:24:27-74
+39-->D:\front\android\app\src\main\AndroidManifest.xml:24:17-76
+39-->D:\front\android\app\src\main\AndroidManifest.xml:24:27-74
 40            </intent-filter>
 41        </activity>
 42
 43        <meta-data
-43-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:27:9-29:33
+43-->D:\front\android\app\src\main\AndroidManifest.xml:27:9-29:33
 44            android:name="flutterEmbedding"
-44-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:28:13-44
+44-->D:\front\android\app\src\main\AndroidManifest.xml:28:13-44
 45            android:value="2" />
-45-->D:\Dashboard\frontend\android\app\src\main\AndroidManifest.xml:29:13-30
+45-->D:\front\android\app\src\main\AndroidManifest.xml:29:13-30
 46
 47        <uses-library
 47-->[androidx.window:window:1.2.0] C:\Users\LAPTOP SHOP\.gradle\caches\transforms-3\a280a8f4dfdb99445a5001494830fe14\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40

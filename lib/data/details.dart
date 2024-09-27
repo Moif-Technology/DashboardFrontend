@@ -18,8 +18,27 @@ class Details {
     // Fetch the customer count from the API with the date parameter
     int customerCount = await apiService.fetchCustomerCount(formattedDate);
 
+    // Dummy data for 'Online' payment
+    String dummyOnlineAmount =
+        '1500'; // Replace this with real data when available
+    String dummyTotalAmount = '123'; // Dummy value for total sales amount
     // Construct the DetailModel list with dynamic data
-    return [
+    List<DetailModel> detailList = [
+      // Move the Sales Amount section to the first position
+      DetailModel(
+        icon: 'assets/icons/amount.png',
+        value: salesDetails['totalCashAmount'].toString(),
+        title: "Cash",
+        value2: salesDetails['totalCreditAmount'].toString(),
+        title2: "Credit",
+        value3: salesDetails['totalCreditCardAmount'].toString(),
+        title3: "Credit Card",
+        value4: salesDetails['Online'].toString(), // Dummy value for 'Online'
+        title4: "Online",
+        totalAmount: salesDetails["TotalSaleAmount"]
+            .toString(), // Random number (e.g., '123') for total amount
+      ),
+      // Remaining details
       DetailModel(
         icon: 'assets/icons/sales.png',
         value: salesDetails['totalSalesCount'].toString(),
@@ -37,15 +56,8 @@ class Details {
         value2: salesDetails['positiveAmountSalesCount'].toString(),
         title2: "Return",
       ),
-      DetailModel(
-        icon: 'assets/icons/amount.png',
-        value: salesDetails['totalCashAmount'].toString(),
-        title: "Cash",
-        value2: salesDetails['totalCreditAmount'].toString(),
-        title2: "Credit",
-        value3: salesDetails['totalCreditCardAmount'].toString(),
-        title3: "Credit Card",
-      ),
     ];
+
+    return detailList;
   }
 }

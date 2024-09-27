@@ -1,13 +1,13 @@
 <libraries>
   <library
-      name="__local_aars__:D:\Dashboard\frontend\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"
-      jars="D:\Dashboard\frontend\build\app\intermediates\flutter\release\libs.jar"
-      resolved="__local_aars__:D:\Dashboard\frontend\build\app\intermediates\flutter\release\libs.jar:unspecified"/>
+      name="__local_aars__:D:\front\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"
+      jars="D:\front\build\app\intermediates\flutter\release\libs.jar"
+      resolved="__local_aars__:D:\front\build\app\intermediates\flutter\release\libs.jar:unspecified"/>
   <library
-      name="D:\Dashboard\frontend\android@@:flutter_secure_storage::release"
-      jars="D:\Dashboard\frontend\build\flutter_secure_storage\.transforms\b4ea80d4b0938b99db32febe4fe69dae\transformed\out\jars\classes.jar;D:\Dashboard\frontend\build\flutter_secure_storage\.transforms\b4ea80d4b0938b99db32febe4fe69dae\transformed\out\jars\libs\R.jar"
+      name="D:\front\android@@:flutter_secure_storage::release"
+      jars="D:\front\build\flutter_secure_storage\.transforms\6072d79d8e2fc3e0c73687e427baa021\transformed\out\jars\classes.jar;D:\front\build\flutter_secure_storage\.transforms\6072d79d8e2fc3e0c73687e427baa021\transformed\out\jars\libs\R.jar"
       resolved="com.it_nomads.fluttersecurestorage:flutter_secure_storage:unspecified"
-      folder="D:\Dashboard\frontend\build\flutter_secure_storage\.transforms\b4ea80d4b0938b99db32febe4fe69dae\transformed\out"
+      folder="D:\front\build\flutter_secure_storage\.transforms\6072d79d8e2fc3e0c73687e427baa021\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -17,10 +17,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="D:\Dashboard\frontend\android@@:path_provider_android::release"
-      jars="D:\Dashboard\frontend\build\path_provider_android\.transforms\354b9ce564e151f0c4c59738f7908832\transformed\out\jars\classes.jar;D:\Dashboard\frontend\build\path_provider_android\.transforms\354b9ce564e151f0c4c59738f7908832\transformed\out\jars\libs\R.jar"
+      name="D:\front\android@@:path_provider_android::release"
+      jars="D:\front\build\path_provider_android\.transforms\482f646c18a8d7e1d5d44a517a441fe9\transformed\out\jars\classes.jar;D:\front\build\path_provider_android\.transforms\482f646c18a8d7e1d5d44a517a441fe9\transformed\out\jars\libs\R.jar"
       resolved="io.flutter.plugins.pathprovider:path_provider_android:unspecified"
-      folder="D:\Dashboard\frontend\build\path_provider_android\.transforms\354b9ce564e151f0c4c59738f7908832\transformed\out"
+      folder="D:\front\build\path_provider_android\.transforms\482f646c18a8d7e1d5d44a517a441fe9\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
